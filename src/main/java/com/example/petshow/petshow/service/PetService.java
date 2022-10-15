@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.petshow.mapper.DozerMapper;
 import com.example.petshow.petshow.Exceptions.ResourceNotFoundException;
 import com.example.petshow.petshow.model.Pet;
 import com.example.petshow.petshow.repository.PetRepositoy;

@@ -2,7 +2,6 @@ package com.example.petshow.petshow.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,50 +16,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.petshow.petshow.service.ClienteService;
-import com.example.petshow.petshow.view.DTO.ClienteDTO;
-
+import com.example.petshow.petshow.model.Produto;
+import com.example.petshow.petshow.service.ProdutoService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api/v1/cliente")
-public class ClienteController {
+@RequestMapping("/api/v1/produtos")
+public class ProdutoController {
     
     @Autowired
-    private ClienteService clienteService;
+    private ProdutoService produtoService;
 
-    @GetMapping(value="/{id}", 
-    produces = MediaType.APPLICATION_JSON_VALUE)
-    public ClienteDTO findById(@PathVariable(value="id") Long id) {
-        return clienteService.findById(id);
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Produto findById(@PathVariable(value = "id") Long id) {
+        return produtoService.findById(id);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ClienteDTO> findAll() {
-        return clienteService.findAll();
+    public List<Produto> findAll() {
+        return produtoService.findAll();
     }
 
-    @PostMapping(
-    consumes = MediaType.APPLICATION_JSON_VALUE,
-    produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ClienteDTO> create(@RequestBody ClienteDTO cliente) {
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Produto> create(@RequestBody Produto produto) {
         // return clienteService.create(cliente);
-        return new ResponseEntity(clienteService.create(cliente), HttpStatus.CREATED);
+        return new ResponseEntity(produtoService.create(produto), HttpStatus.CREATED);
     }
 
-    @PutMapping(
-    consumes = MediaType.APPLICATION_JSON_VALUE,
-    produces = MediaType.APPLICATION_JSON_VALUE)
-    public ClienteDTO update(@RequestBody ClienteDTO cliente) {
-        return clienteService.update(cliente);
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Produto update(@RequestBody Produto produto) {
+        return produtoService.update(produto);
     }
-
+     
     @DeleteMapping(value="/{id}")
     public ResponseEntity<?> delete(@PathVariable(value = "id") Long id) {
-        clienteService.delete(id);
+        produtoService.delete(id);
 
         return ResponseEntity.noContent().build();
     }
-       
-    
 }

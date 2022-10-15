@@ -1,31 +1,31 @@
 
-spring:
-    datasource:
-        driver-class-name: oracle.jdbc.OracleDriver
-        url: jdbc:oracle:thin:@localhost:1521:XE
-        username: petshow
-        password: petshow
-    jpa:
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.Oracle12cDialect
-        show-sql: false
-
 # spring:
 #     datasource:
-#         driver-class-name: com.mysql.cj.jdbc.Driver
-#         url: jdbc:mysql://localhost:3306/petshow?useTimezone=true&serverTimezone=UTC
-#         username: root
-#         password: admin123
+#         driver-class-name: oracle.jdbc.OracleDriver
+#         url: jdbc:oracle:thin:@localhost:1521:XE
+#         username: petshow
+#         password: petshow
 #     jpa:
 #         hibernate:
 #             ddl-auto: update
 #         properties:
 #             hibernate:
-#                 dialect: org.hibernate.dialect.MySQL8Dialect
+#                 dialect: org.hibernate.dialect.Oracle12cDialect
 #         show-sql: false
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/petshow?useTimezone=true&serverTimezone=UTC
+        username: root
+        password: admin123
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+        show-sql: false
 
    
     

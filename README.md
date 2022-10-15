@@ -19,7 +19,7 @@ Outras funcionalidades serão adicionadas com o decorrer do projeto
 ### BackEnd
 
 - Java e Spring Boot
-- Banco de Dados ORACLE
+- Banco de Dados MySQL
 
 ### FronEnd
 
@@ -28,6 +28,7 @@ Outras funcionalidades serão adicionadas com o decorrer do projeto
 ## Funcionalidades Implementadas
 
 - CRUD para cadastro de Clientes e Pets, com relacionamento de tabelas bidirecional
+- CRUD para cadastro de Produtos com relacionamento unidirecional com a tabela de categorias
 
 
 Projeto em desenvolvimento... 👨‍💻👍😁
