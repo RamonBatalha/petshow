@@ -51,7 +51,11 @@ public class ClienteService {
         entity.setCpf(cliente.getCpf());
         entity.setEmail(cliente.getEmail());
         entity.setTelefone(cliente.getTelefone());
-        entity.setEndereco(cliente.getEndereco());
+        entity.setLogradouro(cliente.getLogradouro());
+        entity.setNumero(cliente.getNumero());
+        entity.setBairro(cliente.getBairro());
+        entity.setCidade(cliente.getCidade());
+        entity.setEstado(cliente.getEstado());
          
         var vo = DozerMapper.parseObject(clienteRepositoy.save(entity), ClienteDTO.class);
 

@@ -16,7 +16,11 @@ public class ClienteDTO {
     private String cpf;
     private String telefone;
     private String email;
-    private String endereco;
+    private String logradouro;
+    private String numero;
+    private String bairro;
+    private String cidade;
+    private String estado;
 
     private List<Pet> pet;
     

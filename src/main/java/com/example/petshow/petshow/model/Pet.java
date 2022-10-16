@@ -25,13 +25,13 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(nullable = false, length = 80)
+    @Column(nullable = false, length = 20)
     private String nome;
 
     @Column(nullable = false, length = 15)
     private String idade;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 20)
     private String especie;
 
     @Column(nullable = false, length = 15)
